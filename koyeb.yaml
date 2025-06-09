@@ -1,6 +1,6 @@
-name: bot-md
+name: k1ng-xmd
 services:
-  - name: bot-md-service
+  - name: k1ng-xmd-service
     type: web
     ports:
       - 5000
