@@ -68,7 +68,7 @@ const {
   //===================SESSION-AUTH============================
 if (!fs.existsSync(__dirname + '/sessions/creds.json')) {
 if(!config.SESSION_ID) return console.log('Please add your session to SESSION_ID env !!')
-const sessdata = config.SESSION_ID.replace("K1NG~MD~", '');
+const sessdata = config.SESSION_ID.replace("K1NG~XMD~", '');
 const filer = File.fromURL(`https://mega.nz/file/${sessdata}`)
 filer.download((err, data) => {
 if(err) throw err
@@ -111,7 +111,7 @@ const port = process.env.PORT || 9090;
   }
   });
   console.log('Plugins installed successful ✅')
-  console.log('K1NG-MD CONNECTED SUCCESSFULLY ✅')
+  console.log('K1NG-XMD CONNECTED SUCCESSFULLY ✅')
   
   let up = `
 ╔═════════════════
@@ -122,7 +122,7 @@ const port = process.env.PORT || 9090;
 ║ *🧩 YOUR PREFIX :* ${prefix}       
 ╠═══════════════
 `;
-    conn.sendMessage(conn.user.id, { image: { url: `https://files.catbox.moe/6fdcy3.jpg` }, caption: up })
+    conn.sendMessage(conn.user.id, { image: { url: `https://files.catbox.moe/ngnch5.jpeg` }, caption: up })
   }
   })
   conn.ev.on('creds.update', saveCreds)
