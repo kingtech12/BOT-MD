@@ -22,13 +22,13 @@
   <a href="https://github.com/K1NGXMD">
     <img title="Author" src="https://img.shields.io/badge/Author-DEV%20K1NGTECH-ff004d?style=for-the-badge&logo=github&logoColor=white" />
   </a>
-  <a href="https://whatsapp.com/channel/0029Vb60jaI4o7qIfHw9mB1B">
+  <a href="https://whatsapp.com/channel/0029VbB1ik6JJhzOJmJQI33d">
     <img title="Join WhatsApp Channel" src="https://img.shields.io/badge/Join-WhatsApp%20Channel-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
   </a>
 </p>
 
 <p align="center">
-  <img src="https://profile-counter.glitch.me/K1NG-XMD-V2/count.svg" alt="Visitor Count" />
+  <img src="https://profile-counter.glitch.me/K1NG-XMD-V1/count.svg" alt="Visitor Count" />
 </p>
 
 ---
@@ -39,7 +39,7 @@
 - ♻️ Session Sharing System  
 - ♻️ Fully Open Source  
 - ♻️ Auto QR to DM  
-- ♻️ Session ID Generator (`K1NG-MD-SESSION-ID`)  
+- ♻️ Session ID Generator (`K1NG-XMD-SESSION-ID`)  
 - ♻️ Multi Deploy Options (Render, Heroku, Koyeb, etc.)
 
 ---
@@ -47,14 +47,14 @@
 ## ⚙️ Deploy Easily
 
 ### 🔑 Get Your Session ID
-[![K1NG-MD-V1 SESSION](https://img.shields.io/badge/HAIKO%20-MD%20SESSION-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://haiko-mdx-v2-session.onrender.com)
+[![K1NG-MD-V1 SESSION](https://img.shields.io/badge/HAIKO%20-MD%20SESSION-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://k1ng-boy-session.onrender.com)
 
 ---
 
 ### 🚀 Fork This Repo
 
 <p align="center">
-  <a href="https://github.com/kingtech12/K1NG-MD/fork">
+  <a href="https://github.com/kingtech12/K1NG-XMD/fork">
     <img src="https://img.shields.io/badge/Fork%20This-Repository-8A2BE2?style=for-the-badge&logo=github&logoColor=white" />
   </a>
 </p>
@@ -64,10 +64,10 @@
 ### ☁️ Deploy To Platforms
 
 <p align="center">
-  <a href="https://github.com/K1NGMD/K1NG-MD-V1">
+  <a href="https://github.com/K1NGXMD/K1NG-XMD-V1">
     <img src="https://img.shields.io/badge/Deploy%20To%20Replit-FFA500?style=for-the-badge&logo=replit&logoColor=white" />
   </a>
-  <a href="https://railway.app/new/template?template=https://github.com/K1NGMD/K1NG-MD-V1">
+  <a href="https://railway.app/new/template?template=https://github.com/K1NGXMD/K1NG-XMD-V1">
     <img src="https://img.shields.io/badge/Deploy%20To%20Railway-8B5CF6?style=for-the-badge&logo=railway&logoColor=white" />
   </a>
   <a href="https://render.com/">
@@ -76,13 +76,13 @@
 </p>
 
 <p align="center">
-  <a href="https://dashboard.heroku.com/new?template=https://github.com/K1NGMD/K1NG-MD-V1/tree/main">
+  <a href="https://dashboard.heroku.com/new?template=https://github.com/K1NGXMD/K1NG-XMD-V1/tree/main">
     <img src="https://img.shields.io/badge/Deploy-Heroku-FF004D?style=for-the-badge&logo=heroku&logoColor=white" />
   </a>
   <a href="https://host.talkdrove.com/share-bot/82">
     <img src="https://img.shields.io/badge/Deploy-TaikDrove-6971FF?style=for-the-badge&logo=google-cloud&logoColor=white" />
   </a>
-  <a href="https://app.koyeb.com/services/deploy?type=git&repository=K1NGMD/K1NG-MD-V1&ports=3000">
+  <a href="https://app.koyeb.com/services/deploy?type=git&repository=K1NGXMD/K1NG-XMD-V1&ports=3000">
     <img src="https://img.shields.io/badge/Deploy-Koyeb-FF009D?style=for-the-badge&logo=koyeb&logoColor=white" />
   </a>
 </p>
@@ -92,15 +92,15 @@
 ### 📦 Download the Bot File
 
 <p align="center">
-  <a href="https://github.com/K1NGMD/K1NG-MD-V2/archive/refs/heads/main.zip">
+  <a href="https://github.com/K1NGXMD/K1NG-XMD-V1/archive/refs/heads/main.zip">
     <img src="https://img.shields.io/badge/Download%20Bot-file-FF009D?style=for-the-badge&logo=github&logoColor=white" alt="Download Bot File" />
   </a>
 </p>
 
 Credits & Contributors
 
-> <a href="https://github.com/K1NGMD">
-  <img alt="K1NG MD- OWNER" src="https://img.shields.io/badge/OWNER-DEV%20K1NG-FF0000?style=for-the-badge&logo=github" />
+> <a href="https://github.com/K1NGXMD">
+  <img alt="K1NG XMD- OWNER" src="https://img.shields.io/badge/OWNER-DEV%20K1NG-FF0000?style=for-the-badge&logo=github" />
 </a>  
 
  
@@ -110,7 +110,7 @@ Credits & Contributors
 ### ⚙️ Configuration `.env` File
 
 ```env
-SESSION_ID="K1NG~MD~"
+SESSION_ID="K1NG~XMD~"
 AUTO_READ_STATUS=true
 STATUS_READ_MSG="*Status Seen By K1NG-MD-V1 ♻️*"
 AUTO_STATUS_REPLY=false
@@ -119,7 +119,7 @@ MODE="public"
 WELCOME=false
 AUTO_READ_MESSAGES=false
 AUTO_TYPING=false
-OWNER_NAME="K1NG-MDX-V1"
+OWNER_NAME="K1NG-XMD-V1"
 OWNER_NUMBER="50933734591"
 AUTO_RECORDING=false
 ALWAYS_ONLINE=false
