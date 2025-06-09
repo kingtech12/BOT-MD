@@ -84,7 +84,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 ┃▸ *Reaction:* ${emoji}
 ╰────────────────┈⊷
 
-> *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ BLACK ᴛᴇᴄʜ*`);
+> *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ K1NG ᴛᴇᴄʜ*`);
 
     } catch (e) {
 
@@ -96,4 +96,4 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 
 });
 
-// *ᴘᴏᴡᴇʀᴇᴅ ʙʏ BLACK ᴛᴇᴄʜ* 
+// *ᴘᴏᴡᴇʀᴇᴅ ʙʏ K1NG ᴛᴇᴄʜ* 
