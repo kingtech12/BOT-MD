@@ -92,7 +92,7 @@
 ### 📦 Download the Bot File
 
 <p align="center">
-  <a href="https://github.com/K1NGXMD/K1NG-XMD-V1/archive/refs/heads/main.zip">
+  <a href="https://github.com/kingtech12/K1NG-XMD/archive/refs/heads/main.zip">
     <img src="https://img.shields.io/badge/Download%20Bot-file-FF009D?style=for-the-badge&logo=github&logoColor=white" alt="Download Bot File" />
   </a>
 </p>
