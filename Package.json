@@ -1,12 +1,12 @@
 {
-  "name": "BOT-MD",
+  "name": "K1NG-XMD",
   "version": "1.0.0",
   "description": "A WhatsApp Bot Created By K1NG TECH",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start index.js --deep-monitoring --attach --BOT-MD",
-    "stop": "pm2 stop BOT-MD",
-    "restart": "pm2 restart BOT-MD"
+    "start": "pm2 start index.js --deep-monitoring --attach --K1NG-XMD",
+    "stop": "pm2 stop K1NG-XMD",
+    "restart": "pm2 restart K1NG-XMD"
   },
   "dependencies": {
     "@whiskeysockets/baileys": "6.7.9",
