@@ -1,10 +1,10 @@
-# K1NG-MD-V1
+# K1NG-XMD-V1
 
 
 <p align="center">
   <a href="https://readme-typing-svg.demolab.com/">
-    <img src="https://readme-typing-svg.demolab.com?font=Black+Ops+One&size=80&pause=1000&color=459BF7FF&center=true&vCenter=true&width=1000&height=200&lines=K1NG-MD-V1;VERSION+2025;BY+DEV+K1NG+TECH" 
-         alt="K1NG-MD Banner by DEV K1NG TECH" />
+    <img src="https://readme-typing-svg.demolab.com?font=Black+Ops+One&size=80&pause=1000&color=459BF7FF&center=true&vCenter=true&width=1000&height=200&lines=K1NG-XMD-V1;VERSION+2025;BY+DEV+K1NG+TECH" 
+         alt="K1NG-XMD Banner by DEV K1NG TECH" />
   </a>
 </p>
 
@@ -19,7 +19,7 @@
 ---
 
 <p align="center">
-  <a href="https://github.com/K1NGMD">
+  <a href="https://github.com/K1NGXMD">
     <img title="Author" src="https://img.shields.io/badge/Author-DEV%20K1NGTECH-ff004d?style=for-the-badge&logo=github&logoColor=white" />
   </a>
   <a href="https://whatsapp.com/channel/0029Vb60jaI4o7qIfHw9mB1B">
@@ -28,7 +28,7 @@
 </p>
 
 <p align="center">
-  <img src="https://profile-counter.glitch.me/K1NG-MD-V2/count.svg" alt="Visitor Count" />
+  <img src="https://profile-counter.glitch.me/K1NG-XMD-V2/count.svg" alt="Visitor Count" />
 </p>
 
 ---
