@@ -27,7 +27,7 @@ async (conn, mek, m, { from, reply }) => {
 
     // Nouveau style de menu
     let menuText = `
-╭━━━〔 *K1NG-MD* 〕━━━╮
+╭━━━〔 *K1NG-XMD* 〕━━━╮
 ┃ 👤 *Utilisateur* : @${m.sender.split("@")[0]}
 ┃ ⏱️ *Uptime* : ${uptime()}
 ┃ ⚙️ *Mode* : ${config.MODE}
@@ -66,7 +66,7 @@ async (conn, mek, m, { from, reply }) => {
         forwardingScore: 999,
         isForwarded: true,
         forwardedNewsletterMessageInfo: {
-          newsletterName: config.OWNER_NAME || 'K1NG-MD',
+          newsletterName: config.OWNER_NAME || 'K1NG-XMD',
           serverMessageId: 143
         }
       }
