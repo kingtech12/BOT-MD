@@ -1,8 +1,8 @@
 {
-  "name": "K1NG-MD",
+  "name": "K1NG-XMD",
   "description": "Javascript WhatsApp bot by k1ng tech",
-  "logo": "https://files.catbox.moe/6fdcy3.jpg",
-  "keywords": ["K1NG-MD"],
+  "logo": "https://files.catbox.moe/ngnch5.jpeg",
+  "keywords": ["K1NG-XMD"],
   "success_url": "/",
 
     "stack": "container",
@@ -79,7 +79,7 @@
     "AUTO_STATUS_MSG": {
       "description": "Type custom message on status reply",
       "required": true,
-      "value": "*SEEN YOUR STATUS BY K1NG-MD*"
+      "value": "*SEEN YOUR STATUS BY K1NG-XMD*"
    
      }, 
     
@@ -99,7 +99,7 @@
     "BOT_NAME": {
       "description": "Type here the bot name.",
       "required": false,
-      "value": "K1NG-MD"
+      "value": "K1NG-XMD"
 
       }, 
 
@@ -132,7 +132,7 @@
     "MENU_IMAGE_URL": {
       "description": "add url for mention reply and menu if want.",
       "required": false,
-      "value": "https://files.catbox.moe/6fdcy3.jpg"
+      "value": "https://files.catbox.moe/ngnch5.jpeg"
     },
     
      "DESCRIPTION": {
