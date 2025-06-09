@@ -2,8 +2,9 @@
 
 
 <p align="center">
-  <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Black+Ops+One&size=80&pause=1000&color=459BF7FF&center=true&vCenter=true&width=1000&height=200&lines=K1NG-MD-V1;VERSION+2025;BY+DEV+K1NG TECH" alt="Typing SVG" />
+  <a href="https://readme-typing-svg.demolab.com/">
+    <img src="https://readme-typing-svg.demolab.com?font=Black+Ops+One&size=80&pause=1000&color=459BF7FF&center=true&vCenter=true&width=1000&height=200&lines=K1NG-MD-V1;VERSION+2025;BY+DEV+K1NG+TECH" 
+         alt="K1NG-MD Banner by DEV K1NG TECH" />
   </a>
 </p>
 
