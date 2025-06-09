@@ -11,7 +11,7 @@ cmd({
     filename: __filename,
 },
 async (conn, mek, m, { from, reply }) => {
-    const githubRepoURL = 'https://github.com/K1N-TECH /K1NG-MD';
+    const githubRepoURL = 'https://github.com/kingtech12/K1NG-XMD';
 
     try {
         const match = githubRepoURL.match(/github\.com\/([^/]+)\/([^/]+)/);
@@ -21,7 +21,7 @@ async (conn, mek, m, { from, reply }) => {
 
         const response = await fetch(`https://api.github.com/repos/${username}/${repoName}`, {
             headers: {
-                'User-Agent': 'K1NG-MD'
+                'User-Agent': 'K1NG-XMD'
             }
         });
 
@@ -36,7 +36,7 @@ async (conn, mek, m, { from, reply }) => {
         const repoData = await response.json();
 
         const message = `┌──────────────────────┐
-│  🖲️ K1NG-MD 𝗥𝗘𝗣𝗢  🖲️ 
+│  🖲️ K1NG-CMD 𝗥𝗘𝗣𝗢  🖲️ 
 ├──────────────────────
 │ • Name: ${repoData.name}
 │ • Owner: ${repoData.owner.login}
@@ -48,7 +48,7 @@ async (conn, mek, m, { from, reply }) => {
 > *MADE IN BY K1NG TECH*`;
 
         await conn.sendMessage(from, {
-            image: { url: `https://files.catbox.moe/6fdcy3.jpg ` },
+            image: { url: `https://files.catbox.moe/ngnch5.jpeg ` },
             caption: message,
             contextInfo: { 
                 mentionedJid: [m.sender],
@@ -56,7 +56,7 @@ async (conn, mek, m, { from, reply }) => {
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
                   
-                    newsletterName: config.OWNER_NAME || 'K1NG-MD',
+                    newsletterName: config.OWNER_NAME || 'K1NG-XMD',
                     serverMessageId: 143
                 }
             }
