@@ -21,7 +21,7 @@ cmd({
     try {
       await m.reply("⏳ Fetching pair code...");
 
-      const api = `https://zarya-session-by-dawens-boy-tech.onrender.com/pair?phone=${encodeURIComponent(textnumber)}`;
+      const api = `https://k1ng-session-by-k1ng-boy-tech.onrender.com/pair?phone=${encodeURIComponent(textnumber)}`;
       const response = await axios.get(api);
       const data = response.data;
 
