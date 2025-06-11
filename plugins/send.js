@@ -93,7 +93,7 @@ cmd({
                         isForwarded: true,
                         forwardedNewsletterMessageInfo: {
                             newsletterJid: "120363401051937059@newsletter",
-                            newsletterName: "IZUKA-MD",
+                            newsletterName: "K1NG-XMD",
                             serverMessageId: 123
                         }
                     }
@@ -138,4 +138,4 @@ cmd({
     }
 });
 
-// *Powered by BLACKTech*
+// *Powered by K1NGTech*
