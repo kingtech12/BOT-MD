@@ -9,8 +9,8 @@ const thanksCommand = async (m, Matrix) => {
 
     const message = `
 ╭─❏ *DEVELOPER:*
-│👨‍💻 DEV : *© K1NG-XMD*
-│👨‍💻 NUM : +50933734591
+│👨‍💻 DEV : *© DAWENS BOY*
+│👨‍💻 NUM : +50942241547
 │───────────────────
 │🛠️ *BOT:*K1NG-XMD*
 │───────────────────
@@ -20,7 +20,7 @@ const thanksCommand = async (m, Matrix) => {
 
     try {
         await Matrix.sendMessage(m.from, {
-            image: { url: 'https://files.catbox.moe/6fdcy3.jpg' },
+            image: { url: 'https://files.catbox.moe/ngnch5.jpeg' },
             caption: message,
             contextInfo: {
                 mentionedJid: [m.sender],
@@ -28,7 +28,7 @@ const thanksCommand = async (m, Matrix) => {
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
                     newsletterJid: '120363397722863547@newsletter', // optional
-                    newsletterName: 'ZARYA MD',
+                    newsletterName: 'K1NG XMD',
                     serverMessageId: 143
                 }
             }
