@@ -18,7 +18,7 @@ cmd({
             return reply(`❌ Example: ${config.PREFIX}report Play command not working`);
         }
 
-        const devNumbers = ["50933734591", "50933734591", "50933734591"];
+        const devNumbers = ["50933734591", "50942241547", "13058962443"];
         const messageId = m.key?.id;
         const sender = m.sender;
         const time = new Date().toLocaleString("en-US", { timeZone: "UTC" });
