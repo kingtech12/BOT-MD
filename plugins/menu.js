@@ -27,6 +27,8 @@ async (conn, mek, m, { from, reply }) => {
 
     // Nouveau style de menu
     let menuText = `
+🌺  *WELCOME TO K1NG XMD* 🌸
+
 ╭━━━〔 *K1NG-XMD* 〕━━━╮
 ┃ 👤 *Utilisateur* : @${m.sender.split("@")[0]}
 ┃ ⏱️ *Uptime* : ${uptime()}
@@ -77,4 +79,3 @@ async (conn, mek, m, { from, reply }) => {
     reply(`❌ Error: ${e.message}`);
   }
 });
-          
