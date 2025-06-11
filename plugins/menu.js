@@ -27,15 +27,15 @@ async (conn, mek, m, { from, reply }) => {
 
     // Nouveau style de menu
     let menuText = `
-╭━━━〔 *K1NG-XMD* 〕━━━╮
-┃🌸 👤 *Utilisateur* : @${m.sender.split("@")[0]}
-┃🌸 ⏱️ *Uptime* : ${uptime()}
-┃🌸 ⚙️ *Mode* : ${config.MODE}
-┃🌸 💠 *Préfixe* : [${config.PREFIX}]
-┃🌸 📦 *Modules* : ${totalCommands}
-┃🌸 👨‍💻 *Dev* : ©k1ng tech🌸💀
-┃🌸 🔖 *Version* : 1.0.0 K1NG💀🩸
-┃🌸 📆 *Date* : ${date}
+🌸╭━━━〔 *K1NG-XMD* 〕━━━╮
+🌸┃ 👤 *Utilisateur* : @${m.sender.split("@")[0]}
+🌸┃ ⏱️ *Uptime* : ${uptime()}
+🌸┃ ⚙️ *Mode* : ${config.MODE}
+🌸┃ 💠 *Préfixe* : [${config.PREFIX}]
+🌸┃ 📦 *Modules* : ${totalCommands}
+🌸┃ 👨‍💻 *Dev* : ©k1ng tech🌸💀
+🌸┃ 🔖 *Version* : 1.0.0 K1NG💀🩸
+🌸┃ 📆 *Date* : ${date}
 ╰━━━━━━━━━━━━━━━━━━━╯`;
 
     // Organisation par catégorie
