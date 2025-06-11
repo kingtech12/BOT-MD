@@ -9,7 +9,7 @@ cmd({
   use: '.menu',
   desc: "Show all bot commands",
   category: "menu",
-  react: "🐍",
+  react: "🍷",
   filename: __filename
 },
 async (conn, mek, m, { from, reply }) => {
@@ -28,14 +28,14 @@ async (conn, mek, m, { from, reply }) => {
     // Nouveau style de menu
     let menuText = `
 ╭━━━〔 *K1NG-XMD* 〕━━━╮
-┃ 👤 *Utilisateur* : @${m.sender.split("@")[0]}
-┃ ⏱️ *Uptime* : ${uptime()}
-┃ ⚙️ *Mode* : ${config.MODE}
-┃ 💠 *Préfixe* : [${config.PREFIX}]
-┃ 📦 *Modules* : ${totalCommands}
-┃ 👨‍💻 *Dev* : ©k1ng tech
-┃ 🔖 *Version* : 1.0.0
-┃ 📆 *Date* : ${date}
+┃🌸 👤 *Utilisateur* : @${m.sender.split("@")[0]}
+┃🌸 ⏱️ *Uptime* : ${uptime()}
+┃🌸 ⚙️ *Mode* : ${config.MODE}
+┃🌸 💠 *Préfixe* : [${config.PREFIX}]
+┃🌸 📦 *Modules* : ${totalCommands}
+┃🌸 👨‍💻 *Dev* : ©k1ng tech🌸💀
+┃🌸 🔖 *Version* : 1.0.0 K1NG💀🩸
+┃🌸 📆 *Date* : ${date}
 ╰━━━━━━━━━━━━━━━━━━━╯`;
 
     // Organisation par catégorie
@@ -48,18 +48,18 @@ async (conn, mek, m, { from, reply }) => {
 
     const keys = Object.keys(category).sort();
     for (let k of keys) {
-      menuText += `\n\n🔸『 *${k.toUpperCase()}* 』\n`;
+      menuText += `\n\n🩸『 *${k.toUpperCase()}* 』\n`;
       const cmds = category[k].filter(c => c.pattern).sort((a, b) => a.pattern.localeCompare(b.pattern));
       cmds.forEach((cmd) => {
         const usage = cmd.pattern.split('|')[0];
-        menuText += `🌀 *${config.PREFIX}${usage}*\n`;
+        menuText += `🌸 *${config.PREFIX}${usage}*\n`;
       });
       menuText += `━━━━━━━━━━━━━━━`;
     }
 
     // Envoyer le menu avec image
     await conn.sendMessage(from, {
-      image: { url: 'your url' },
+      image: { url: 'https://files.catbox.moe/ngnch5.jpeg' },
       caption: menuText,
       contextInfo: {
         mentionedJid: [m.sender],
