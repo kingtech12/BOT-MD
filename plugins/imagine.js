@@ -27,7 +27,7 @@ cmd({
 
     await conn.sendMessage(m.chat, {
       image: imageBuffer,
-      caption: `> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ BLACK ᴛᴇᴄʜ* 🚀\n✨ Prompt: *${q}*`
+      caption: `> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ K1NG ᴛᴇᴄʜ* 🚀\n✨ Prompt: *${q}*`
     });
 
   } catch (error) {
@@ -61,7 +61,7 @@ cmd({
 
     await conn.sendMessage(m.chat, {
       image: imageBuffer,
-      caption: `> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ BLACK ᴛᴇᴄʜ*🚀\n✨ Prompt: *${q}*`
+      caption: `> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ K1NG ᴛᴇᴄʜ*🚀\n✨ Prompt: *${q}*`
     });
 
   } catch (error) {
@@ -95,7 +95,7 @@ cmd({
 
     await conn.sendMessage(m.chat, {
       image: imageBuffer,
-      caption: `> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ BLACK ᴛᴇᴄʜ*🚀\n✨ Prompt: *${q}*`
+      caption: `> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ K1NG ᴛᴇᴄʜ*🚀\n✨ Prompt: *${q}*`
     });
 
   } catch (error) {
