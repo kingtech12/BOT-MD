@@ -27,8 +27,6 @@ async (conn, mek, m, { from, reply }) => {
 
     // Nouveau style de menu
     let menuText = `
-🌺  *WELCOME TO K1NG XMD* 🌸
-
 ╭━━━〔 *K1NG-XMD* 〕━━━╮
 ┃ 👤 *Utilisateur* : @${m.sender.split("@")[0]}
 ┃ ⏱️ *Uptime* : ${uptime()}
@@ -39,7 +37,9 @@ async (conn, mek, m, { from, reply }) => {
 ┃ 🔖 *Version* : 1.0.0 K1NG💀🩸
 ┃ 📆 *Date* : ${date}
 ╰━━━━━━━━━━━━━━━━━━━╯`;
-
+    
+🌺  *WELCOME TO K1NG XMD* 🌸  
+    
     // Organisation par catégorie
     let category = {};
     for (let cmd of commands) {
