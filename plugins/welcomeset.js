@@ -1,5 +1,5 @@
-import config from '../../config.cjs';
-import { cmd } from '../command.js';
+const { cmd } = require('../command');
+const config = require('../config');
 
 cmd({
   pattern: "welcome",
@@ -9,8 +9,8 @@ cmd({
   filename: __filename,
   execute: async (m, Matrix) => {
     const prefix = config.PREFIX;
-    const cmd = m.body.startsWith(prefix) ? m.body.slice(prefix.length).split(' ')[0].toLowerCase() : '';
-    const text = m.body.slice(prefix.length + cmd.length).trim();
+    const cmdName = m.body.startsWith(prefix) ? m.body.slice(prefix.length).split(' ')[0].toLowerCase() : '';
+    const text = m.body.slice(prefix.length + cmdName.length).trim();
 
     if (!m.isGroup) return m.reply("*📛 THIS COMMAND CAN ONLY BE USED IN GROUPS*");
     
@@ -25,10 +25,10 @@ cmd({
 
     let responseMessage;
 
-    if (text === 'on') {
+    if (text === "on") {
       config.WELCOME = true;
       responseMessage = "✅ WELCOME & LEFT message has been *enabled*.";
-    } else if (text === 'off') {
+    } else if (text === "off") {
       config.WELCOME = false;
       responseMessage = "❌ WELCOME & LEFT message has been *disabled*.";
     } else {
@@ -39,7 +39,7 @@ cmd({
       await Matrix.sendMessage(m.from, { text: responseMessage }, { quoted: m });
     } catch (error) {
       console.error("Error in welcome command:", error);
-      await Matrix.sendMessage(m.from, { text: '❗ Error processing your request.' }, { quoted: m });
+      await Matrix.sendMessage(m.from, { text: "❗ Error processing your request." }, { quoted: m });
     }
   }
 });
