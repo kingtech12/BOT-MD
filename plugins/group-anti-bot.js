@@ -1,69 +1,54 @@
-import config from "../../config.cjs";
+const { cmd } = require('../command');
+const config = require('../config');
 
-const antibotDB = new Map(); // Temporary in-memory storage
+const antibotDB = new Map();
 
-const antibot = async (m, gss) => {
+cmd({
+  pattern: ".*",
+  desc: "Antibot system that auto-detects and removes users using bot commands",
+  category: "group",
+  use: "antibot on / antibot off",
+  react: "🛡️",
+  onlyGroup: true,
+  fromMe: false,
+}, async (m, gss) => {
   try {
-    const cmd = m.body.toLowerCase().trim();
-
-    // Enable antibot
-    if (cmd === "antibot on") {
-      if (!m.isGroup) return m.reply("*Command reserved for groups only*\n\n> *Try it in a group*");
-
+    const body = m.body?.toLowerCase().trim();
+    if (!body) return;
+    if (body === "antibot on") {
       const groupMetadata = await gss.groupMetadata(m.from);
       const participants = groupMetadata.participants;
       const senderAdmin = participants.find(p => p.id === m.sender)?.admin;
-
-      if (!senderAdmin) {
-        return m.reply("*Command for admins only*\n\n> *Request admin role*");
-      }
-
+      if (!senderAdmin) return m.reply("*⛔ Only admins can enable antibot.*");
       antibotDB.set(m.from, true);
-      return m.reply("*Antibot is now activated for this group.*\n\n> *Be warned: Do not use bot commands.*");
+      return m.reply("*✅ Antibot is now enabled in this group.*\n\n> *Do not use bot commands here.*");
     }
-
-    // Disable antibot
-    if (cmd === "antibot off") {
-      if (!m.isGroup) return m.reply("*Command only for groups!*\n\n> *Please try it in a group*");
-
+    if (body === "antibot off") {
       const groupMetadata = await gss.groupMetadata(m.from);
       const participants = groupMetadata.participants;
       const senderAdmin = participants.find(p => p.id === m.sender)?.admin;
-
-      if (!senderAdmin) {
-        return m.reply("*Only admins can disable antibot!*\n\n> *Smile in pain*");
-      }
-
+      if (!senderAdmin) return m.reply("*⛔ Only admins can disable antibot.*");
       antibotDB.delete(m.from);
-      return m.reply("*Antibot is now disabled for this group.*\n\n> *I'll be back soon*");
+      return m.reply("*🧯 Antibot disabled.*");
     }
-
-    // **🔹 AUTO-DETECT BOT COMMANDS AND DELETE THEM**
     if (antibotDB.get(m.from)) {
-      const botCommandRegex = /\.menu|\.help|\.ping|\.play|\.owner|\.img|\.repo|\.sc|\.start|\.command/gi;
-      if (botCommandRegex.test(m.body)) {
-        // Delete the message
-        await gss.sendMessage(m.from, { delete: m.key });
-
-        // Warn the user
-        await m.reply(`*Bot commands are not allowed in this group!*\n\n> *This is your first warning.*`);
-
-        // Track warned users
-        const warnedUsers = antibotDB.get(m.from + "_warned") || new Set();
+      const botCommandRegex = /\.(menu|help|ping|play|owner|img|repo|sc|start|command)/i;
+      if (botCommandRegex.test(body)) {
+        if (m.key) await gss.sendMessage(m.from, { delete: m.key });
+        const warnedKey = m.from + "_warned";
+        const warnedUsers = antibotDB.get(warnedKey) || new Set();
         if (warnedUsers.has(m.sender)) {
-          // Remove the user if they repeat the violation
           await gss.groupParticipantsUpdate(m.from, [m.sender], 'remove');
-          return m.reply(`*${m.sender.split('@')[0]} has been removed for using bot commands.*`);
+          return m.reply(`*🚫 ${m.sender.split('@')[0]} has been removed for using bot commands repeatedly.*`);
         } else {
           warnedUsers.add(m.sender);
-          antibotDB.set(m.from + "_warned", warnedUsers);
+          antibotDB.set(warnedKey, warnedUsers);
+          return m.reply(`*❌ Bot commands are forbidden here!*\n> *First warning for ${m.sender.split('@')[0]}.*`);
         }
       }
     }
-  } catch (error) {
-    console.error("Error in Antibot:", error);
-    m.reply("*⚠️ An error occurred while processing Antibot.*\n\n> *Please try again later*");
+  } catch (err) {
+    console.error("❌ Antibot Error:", err);
+    m.reply("*⚠️ An error occurred in the antibot system.*");
   }
-};
-
-export default antibot;
+});
