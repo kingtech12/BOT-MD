@@ -1,22 +1,26 @@
+const config = require('../config');
 const { cmd } = require('../command');
-const config = require('../../config.cjs');
 
 cmd({
   pattern: "sudo",
-  alias: [],
-  desc: "Voye kontak owner bot la",
+  alias: ["owner", "dev"],
+  desc: "Send contact of the bot owner",
   category: "owner",
-  use: ".sudo",
-  react: "👑",
+  use: '.sudo',
+  react: "📞",
   filename: __filename
 },
-async (conn, mek, m, { reply }) => {
+async (conn, mek, m, { from, reply }) => {
   try {
-    await conn.sendContact(m.from, [config.SUDO_NUMBER], m);
-    await m.react("✅");
+    const sudoRaw = config.SUDO_NUMBER;
+    if (!sudoRaw) return reply("SUDO_NUMBER not set in config.");
+
+    const ownerNumbers = sudoRaw.split(',').map(n => n.trim());
+    await conn.sendContact(from, ownerNumbers, m);
+    await m.React("✅");
   } catch (error) {
-    console.error('❌ Erè:', error);
-    await reply('❌ Pa kapab voye kontak la.');
-    await m.react("❌");
+    console.error('Error sending owner contact:', error);
+    await reply('Failed to send owner contact.');
+    await m.React("❌");
   }
 });
