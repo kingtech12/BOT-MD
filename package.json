@@ -4,17 +4,17 @@
   "description": "A WhatsApp Bot Created By K1NG TECH",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start index.js --deep-monitoring --attach --K1NG-XMD",
+    "start": "pm2 start index.js --deep-monitoring --attach --name K1NG-XMD",
     "stop": "pm2 stop K1NG-XMD",
     "restart": "pm2 restart K1NG-XMD"
   },
   "dependencies": {
-    "@whiskeysockets/baileys": "6.7.9",
+    "@whiskeysockets/baileys": "^6.7.9",
     "@adiwajshing/keyed-db": "^0.2.4",
     "@dark-yasiya/yt-dl.js": "1.0.5",
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "@vitalets/google-translate-api": "^9.2.0",
-    "@dark-yasiya/scrap":"1.0.1",    
+    "@dark-yasiya/scrap": "1.0.1",    
     "pino": "^7.0.5",
     "pm2": "^6.0.5",
     "util": "^0.12.4",
@@ -38,20 +38,17 @@
     "pdfkit": "^0.14.0",
     "wa_set_pkg": "1.0.5",
     "wa-sticker-formatter": "^4.4.4",
-    "path": "^0.12.7",
     "vm": "^0.1.0",
     "adm-zip": "^0.5.16",
     "cheerio": "^1.0.0-rc.12",
-    "ruhend-scraper" : "8.0.3",
+    "ruhend-scraper": "8.0.3",
     "qrcode-terminal": "^0.12.0",
-    "yt-search":"2.11.1",
+    "yt-search": "2.11.1",
     "sequelize": "^6.37.5",
     "sqlite3": "^5.1.7",
-    "vm": "^0.1.0",
-    "api-dylux":"1.8.5",
-    "@mrnima/tiktok-downloader":"1.0.0",
-    "@mrnima/facebook-downloader":"1.0.0",
-    "mrnima-moviedl":"1.0.0"
+    "api-dylux": "1.8.5",
+    "@mrnima/tiktok-downloader": "1.0.0",
+    "@mrnima/facebook-downloader": "1.0.0",
+    "mrnima-moviedl": "1.0.0"
   }
-  }
-    
+}
