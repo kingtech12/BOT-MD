@@ -1,19 +1,35 @@
 const config = require('../config');
 const moment = require('moment-timezone');
 const { cmd, commands } = require('../command');
-const axios = require('axios');
+
+// Small caps function
+function toSmallCaps(str) {
+  const smallCaps = {
+    A: 'ᴀ', B: 'ʙ', C: 'ᴄ', D: 'ᴅ', E: 'ᴇ', F: 'ғ', G: 'ɢ', H: 'ʜ',
+    I: 'ɪ', J: 'ᴊ', K: 'ᴋ', L: 'ʟ', M: 'ᴍ', N: 'ɴ', O: 'ᴏ', P: 'ᴘ',
+    Q: 'ǫ', R: 'ʀ', S: 's', T: 'ᴛ', U: 'ᴜ', V: 'ᴠ', W: 'ᴡ', X: 'x',
+    Y: 'ʏ', Z: 'ᴢ'
+  };
+  return str.toUpperCase().split('').map(c => smallCaps[c] || c).join('');
+}
+
+// Delay function
+function delay(ms) {
+  return new Promise(res => setTimeout(res, ms));
+}
 
 cmd({
   pattern: "menu",
-  alias: ["allmenu", "gotar"],
+  alias: ["🍷", "k1ng", "allmenu"],
   use: '.menu',
   desc: "Show all bot commands",
   category: "menu",
   react: "🍷",
   filename: __filename
 },
-async (conn, mek, m, { from, reply }) => {
+async (k1ng, mek, m, { from, reply }) => {
   try {
+    const sender = (m && m.sender) ? m.sender : (mek?.key?.participant || mek?.key?.remoteJid || 'unknown@s.whatsapp.net');
     const totalCommands = commands.length;
     const date = moment().tz("America/Port-au-Prince").format("dddd, DD MMMM YYYY");
 
@@ -25,22 +41,21 @@ async (conn, mek, m, { from, reply }) => {
       return `${h}h ${m}m ${s}s`;
     };
 
-    // Nouveau style de menu
-    let menuText = `
+    let k1ngmenu = `
 ╭━━━〔 *K1NG-XMD* 〕━━━╮
-┃ 👤 *Utilisateur* : @${m.sender.split("@")[0]}
-┃ ⏱️ *Uptime* : ${uptime()}
-┃ ⚙️ *Mode* : ${config.MODE}
-┃ 💠 *Préfixe* : [${config.PREFIX}]
+┃ 👤 *ᴜsᴇʀ* : @${m.sender.split("@")[0]}
+┃ ⏱️ *ʀᴜɴᴛɪᴍᴇ* : ${uptime()}
+┃ ⚙️ *ᴍᴏᴅᴇ* : ${config.MODE}
+┃ 💠 *ᴘʀᴇғɪx* : [${config.PREFIX}]
 ┃ 📦 *Modules* : ${totalCommands}
-┃ 👨‍💻 *Dev* : ©k1ng tech🌸💀
-┃ 🔖 *Version* : 1.0.0 K1NG💀🩸
-┃ 📆 *Date* : ${date}
+┃ 👨‍💻 *ᴅᴇᴠ* : *©k1ng tech🌸💀*
+┃ 🔖 *ᴠᴇʀsɪᴏɴ* : *1.0.0 K1NG💀*
+┃ 📆 *Dᴀᴛᴇ* : ${date}
 ╰━━━━━━━━━━━━━━━━━━━╯`;
     
 🌺  *WELCOME TO K1NG XMD* 🌸  
     
-    // Organisation par catégorie
+    // Organize commands by category
     let category = {};
     for (let cmd of commands) {
       if (!cmd.category) continue;
@@ -48,30 +63,38 @@ async (conn, mek, m, { from, reply }) => {
       category[cmd.category].push(cmd);
     }
 
+    // Build command list
     const keys = Object.keys(category).sort();
     for (let k of keys) {
-      menuText += `\n\n🩸🏳️‍🌈『 *${k.toUpperCase()}* 』\n`;
+      k1ngmenu += `\n\n┌── 『 ${k.toUpperCase()} MENU 』`;
       const cmds = category[k].filter(c => c.pattern).sort((a, b) => a.pattern.localeCompare(b.pattern));
       cmds.forEach((cmd) => {
         const usage = cmd.pattern.split('|')[0];
-        menuText += `🇭🇹 *${config.PREFIX}${usage}*\n`;
+        k1ngmenu += `\n🌹├❃ ${config.PREFIX}${toSmallCaps(usage)}`;
       });
-      menuText += `━━━━━━━━━━━━━━━`;
+      k1ngmenu += `\n┗━━━━━━━━━━━━━━❃🇭🇹`;
     }
 
     // Envoyer le menu avec image
     await conn.sendMessage(from, {
-      image: { url: 'https://files.catbox.moe/ngnch5.jpeg' },
-      caption: menuText,
+      image: { url: 'https://files.catbox.moe/gtv9eh.jpeg' },
+      caption: k1ngmenu,
       contextInfo: {
         mentionedJid: [m.sender],
         forwardingScore: 999,
         isForwarded: true,
         forwardedNewsletterMessageInfo: {
-          newsletterName: config.OWNER_NAME || 'K1NG-XMD',
+          newsletterName: config.OWNER_NAME || '𝗞1𝗡𝗚-𝗫𝗠𝗗',
           serverMessageId: 143
         }
       }
+    }, { quoted: mek });
+
+  // Send voice message
+    await k1ng.sendMessage(from, {
+      audio: { url: 'https://files.catbox.moe/downdu.mp4' },
+      mimetype: 'audio/mp4',
+      ptt: true
     }, { quoted: mek });
 
   } catch (e) {
