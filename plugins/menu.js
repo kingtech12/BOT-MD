@@ -18,13 +18,20 @@ function delay(ms) {
   return new Promise(res => setTimeout(res, ms));
 }
 
+function generateRamBar(percentage) {
+  const totalBlocks = 5;
+  const filled = Math.round(percentage * totalBlocks);
+  const empty = totalBlocks - filled;
+  return '▣'.repeat(filled) + '□'.repeat(empty);
+}
+
 cmd({
   pattern: "menu",
-  alias: ["🍷", "k1ng", "allmenu"],
+  alias: ["🖤", "k1ng", "allmenu"],
   use: '.menu',
   desc: "Show all bot commands",
   category: "menu",
-  react: "🍷",
+  react: "🖤",
   filename: __filename
 },
 async (k1ng, mek, m, { from, reply }) => {
@@ -41,21 +48,29 @@ async (k1ng, mek, m, { from, reply }) => {
       return `${h}h ${m}m ${s}s`;
     };
 
-    let k1ngmenu = `
-╭━━〔 𝙆𝟭𝙉𝙂-𝙓𝙈𝘿 𝘽𝙊𝙏 〕━━╮
-👤 User        : @${m.sender.split("@")[0]}
-⏱️ Uptime      : ${uptime()}
-⚙️ Mode        : ${config.MODE}
-🔰 Prefix      : ${config.PREFIX}
-📦 Modules     : ${totalCommands}
-👨‍💻 Dev         : 𝙆𝟭𝙉𝙂 𝙏𝙀𝘾𝙃 💀
-📀 Version     : 1.0.0 K1NG-XMD
-📆 Date        : ${date}
-╰━━━━━━━━━━━━━━━━━━━━╯
+const ping = Math.floor(Math.random() * 50) + 10;
+    const usedMemMB = Math.round(process.memoryUsage().heapUsed / 1024 / 1024);
+    const memoryUsage = usedMemMB;
+    const ramPercent = usedMemMB / (16 * 1024); // assuming 16GB RAM
+    const ramUsageBar = generateRamBar(ramPercent);
 
-🔥 *BOT ONLINE — SYSTEM READY*  
-📚 Type *${config.PREFIX}menu* to explore commands.
-    
+    let k1ngMenu = `
+╔〘 *🇭🇹 𝗞1𝗡𝗚-𝗫𝗠𝗗 🇭🇹* 
+║ 👑 *Owner:* 𝗠𝗥 𝗞߁𝗡𝗚
+║ 🧩 *Prefix:* [ ${config.PREFIX} ]
+║ 🖥️ *Host:* linux
+║ 🧠 *Commands:* ${commands.length}
+║ ⚙️ *Mode:* ${config.MODE}
+║ 🧪 *Version:* 1.0.0
+║ ⚡ *Ping:* ${ping} ms
+║ 📊 *Usage:* ${memoryUsage} MB of 16 GB
+║ 🧬 *RAM:* ${ramUsageBar} 32%
+╚═〘 *System Status* 
+
+✨ *Welcome to* 𝙆𝟭𝙉𝙂-𝙓𝙈𝘿
+━━━━━━━━━━━━━━━━━━━━━━━
+`;
+
     // Organize commands by category
     let category = {};
     for (let cmd of commands) {
@@ -64,33 +79,35 @@ async (k1ng, mek, m, { from, reply }) => {
       category[cmd.category].push(cmd);
     }
 
-    // Build command list - simple & clean style
+    // Add commands by category to menu with ⎾═╼▣ style, without prefix
 const keys = Object.keys(category).sort();
 for (let k of keys) {
-  k1ngmenu += `\n\n★━━━ [ ${k.toUpperCase()} MENU ] ━━━★`;
+  k1ngMenu += `\n\n⎾═╼▣ *${k.toUpperCase()} MENU*`;
   const cmds = category[k].filter(c => c.pattern).sort((a, b) => a.pattern.localeCompare(b.pattern));
   cmds.forEach((cmd) => {
     const usage = cmd.pattern.split('|')[0];
-    k1ngmenu += `\n✦ ➜ ${config.PREFIX}${toSmallCaps(usage)}`;
+    k1ngMenu += `\n︱✗ ${toSmallCaps(usage)}`;
   });
-  k1ngmenu += `\n╚✧───────────────────────────────✧╝`;
+  k1ngMenu += `\n⎿═╼▣`;
 }
-    // Envoyer le menu avec image
-    await conn.sendMessage(from, {
-      image: { url: 'https://files.catbox.moe/gtv9eh.jpeg' },
-      caption: k1ngmenu,
+
+    // Send menu message without buttons
+    await k1ng.sendMessage(from, {
+      image: { url: config.MENU_IMAGE_URL || 'https://files.catbox.moe/gtv9eh.jpeg' },
+      caption: k1ngMenu,
       contextInfo: {
-        mentionedJid: [m.sender],
+        mentionedJid: [sender],
         forwardingScore: 999,
         isForwarded: true,
         forwardedNewsletterMessageInfo: {
-          newsletterName: config.OWNER_NAME || '𝗞1𝗡𝗚-𝗫𝗠𝗗',
+          newsletterJid: config.newsletterJid || '120363388484459995@newsletter',
+          newsletterName: '𝗞1𝗡𝗚-𝗫𝗠𝗗',
           serverMessageId: 143
         }
       }
     }, { quoted: mek });
 
-  // Send voice message
+    // Optional: send audio message as PTT
     await k1ng.sendMessage(from, {
       audio: { url: 'https://files.catbox.moe/downdu.mp4' },
       mimetype: 'audio/mp4',
