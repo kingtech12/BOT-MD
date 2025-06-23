@@ -71,9 +71,9 @@ for (let k of keys) {
   const cmds = category[k].filter(c => c.pattern).sort((a, b) => a.pattern.localeCompare(b.pattern));
   cmds.forEach((cmd) => {
     const usage = cmd.pattern.split('|')[0];
-    k1ngmenu += `\n➤ ${config.PREFIX}${toSmallCaps(usage)}`;
+    k1ngmenu += `\n✦ ➜ ${config.PREFIX}${toSmallCaps(usage)}`;
   });
-  k1ngmenu += `\n━━━━━━━━━━━━━━━━━━━━`;
+  k1ngmenu += `\n╚✧───────────────────────────────✧╝`;
 }
     // Envoyer le menu avec image
     await conn.sendMessage(from, {
