@@ -64,18 +64,17 @@ async (k1ng, mek, m, { from, reply }) => {
       category[cmd.category].push(cmd);
     }
 
-    // Build command list
-    const keys = Object.keys(category).sort();
-    for (let k of keys) {
-      k1ngmenu += `\n\n┌── 『 ${k.toUpperCase()} MENU 』`;
-      const cmds = category[k].filter(c => c.pattern).sort((a, b) => a.pattern.localeCompare(b.pattern));
-      cmds.forEach((cmd) => {
-        const usage = cmd.pattern.split('|')[0];
-        k1ngmenu += `\n🌹├❃ ${config.PREFIX}${toSmallCaps(usage)}`;
-      });
-      k1ngmenu += `\n┗━━━━━━━━━━━━━━❃🇭🇹`;
-    }
-
+    // Build command list - simple & clean style
+const keys = Object.keys(category).sort();
+for (let k of keys) {
+  k1ngmenu += `\n\n★━━━ [ ${k.toUpperCase()} MENU ] ━━━★`;
+  const cmds = category[k].filter(c => c.pattern).sort((a, b) => a.pattern.localeCompare(b.pattern));
+  cmds.forEach((cmd) => {
+    const usage = cmd.pattern.split('|')[0];
+    k1ngmenu += `\n➤ ${config.PREFIX}${toSmallCaps(usage)}`;
+  });
+  k1ngmenu += `\n━━━━━━━━━━━━━━━━━━━━`;
+}
     // Envoyer le menu avec image
     await conn.sendMessage(from, {
       image: { url: 'https://files.catbox.moe/gtv9eh.jpeg' },
