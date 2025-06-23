@@ -42,18 +42,19 @@ async (k1ng, mek, m, { from, reply }) => {
     };
 
     let k1ngmenu = `
-╭━━━〔 *K1NG-XMD* 〕━━━╮
-┃ 👤 *ᴜsᴇʀ* : @${m.sender.split("@")[0]}
-┃ ⏱️ *ʀᴜɴᴛɪᴍᴇ* : ${uptime()}
-┃ ⚙️ *ᴍᴏᴅᴇ* : ${config.MODE}
-┃ 💠 *ᴘʀᴇғɪx* : [${config.PREFIX}]
-┃ 📦 *Modules* : ${totalCommands}
-┃ 👨‍💻 *ᴅᴇᴠ* : *©k1ng tech🌸💀*
-┃ 🔖 *ᴠᴇʀsɪᴏɴ* : *1.0.0 K1NG💀*
-┃ 📆 *Dᴀᴛᴇ* : ${date}
-╰━━━━━━━━━━━━━━━━━━━╯`;
-    
-🌺  *WELCOME TO K1NG XMD* 🌸  
+╭━━〔 𝙆𝟭𝙉𝙂-𝙓𝙈𝘿 𝘽𝙊𝙏 〕━━╮
+👤 User        : @${m.sender.split("@")[0]}
+⏱️ Uptime      : ${uptime()}
+⚙️ Mode        : ${config.MODE}
+🔰 Prefix      : ${config.PREFIX}
+📦 Modules     : ${totalCommands}
+👨‍💻 Dev         : 𝙆𝟭𝙉𝙂 𝙏𝙀𝘾𝙃 💀
+📀 Version     : 1.0.0 K1NG-XMD
+📆 Date        : ${date}
+╰━━━━━━━━━━━━━━━━━━━━╯
+
+🔥 *BOT ONLINE — SYSTEM READY*  
+📚 Type *${config.PREFIX}menu* to explore commands.
     
     // Organize commands by category
     let category = {};
