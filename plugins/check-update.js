@@ -10,7 +10,7 @@ cmd({
   alias: ["changelog", "cupdate", "checkupdate"],
   react: '🚀',
   desc: "Check bot's version, system stats, and update info.",
-  category: 'info',
+  category: 'main',
   filename: __filename
 }, async (conn, mek, m, {
   from, sender, pushname, reply
