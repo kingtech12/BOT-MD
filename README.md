@@ -46,8 +46,11 @@
 
 ## ⚙️ Deploy Easily
 
-### 🔑 Get Your Session ID
-[![K1NG-XMD SESSION](https://img.shields.io/badge/K1NG%20-XMD%20SESSION-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://k1ng-xmd-session-id1.onrender.com/pair)
+### 🔑 Get Your Session ID 1️⃣
+[![K1NG-XMD SESSION](https://img.shields.io/badge/K1NG%20-XMD%20SESSION-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://king-tech-k1ng-xmd-session-id.onrender.com/pair)
+
+### 🔑 Get Your Session ID 2️⃣
+[![K1NG-XMD SESSION](https://img.shields.io/badge/K1NG%20-XMD%20SESSION-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://k1ng-xmd-session-id1.onrender.com)
 
 ---
 
