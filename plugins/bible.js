@@ -5,7 +5,7 @@ const { cmd } = require("../command");
 cmd({
     pattern: "bible",
     desc: "Fetch Bible verses by reference.",
-    category: "bible",
+    category: "main",
     react: "📖",
     filename: __filename
 }, async (conn, mek, m, { args, reply }) => {
