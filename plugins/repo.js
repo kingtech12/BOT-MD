@@ -7,7 +7,7 @@ cmd({
     alias: ["sc", "script", "info"],
     desc: "Fetch GitHub repository information",
     react: "📂",
-    category: "info",
+    category: "menu",
     filename: __filename,
 },
 async (conn, mek, m, { from, reply }) => {
@@ -21,7 +21,7 @@ async (conn, mek, m, { from, reply }) => {
 
         const response = await fetch(`https://api.github.com/repos/${username}/${repoName}`, {
             headers: {
-                'User-Agent': 'K1NG-XMD'
+                'User-Agent': '𝗞1𝗡𝗚-𝗫𝗠𝗗'
             }
         });
 
@@ -36,7 +36,7 @@ async (conn, mek, m, { from, reply }) => {
         const repoData = await response.json();
 
         const message = `┌──────────────────────┐
-│  🖲️ K1NG-CMD 𝗥𝗘𝗣𝗢  🖲️ 
+│  💫 𝗞1𝗡𝗚-𝗫𝗠𝗗 𝗥𝗘𝗣𝗢  💫  
 ├──────────────────────
 │ • Name: ${repoData.name}
 │ • Owner: ${repoData.owner.login}
@@ -45,17 +45,17 @@ async (conn, mek, m, { from, reply }) => {
 │ • URL: ${repoData.html_url}
 │ • Desc: ${repoData.description || 'None'}
 └──────────────────────┘
-> *MADE IN BY K1NG TECH*`;
+> *POWERED ʙʏ K1NG TECH*`;
 
         await conn.sendMessage(from, {
-            image: { url: `https://files.catbox.moe/ngnch5.jpeg ` },
+            image: { url: `https://files.catbox.moe/gtv9eh.jpeg` },
             caption: message,
             contextInfo: { 
                 mentionedJid: [m.sender],
                 forwardingScore: 999,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                  
+                    newsletterJid: '120363401134536911@newsletter',
                     newsletterName: config.OWNER_NAME || 'K1NG-XMD',
                     serverMessageId: 143
                 }
@@ -67,7 +67,3 @@ async (conn, mek, m, { from, reply }) => {
         reply("❌ Une erreur est survenue lors de la récupération du dépôt.");
     }
 });
-     reply("❌ Une erreur est survenue lors de la récupération du dépôt.");
-    }
-});
-              

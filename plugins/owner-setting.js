@@ -14,7 +14,24 @@ async (conn, mek, m, { from, isOwner, reply }) => {
     if (!isOwner) return reply("❌ You are not the owner!");
     reply("🛑 Shutting down...").then(() => process.exit());
 });
-
+// 2. Broadcast Message to All Groups
+cmd({
+    pattern: "broadcast",
+    desc: "Broadcast a message to all groups.",
+    category: "owner",
+    react: "📢",
+    filename: __filename
+},
+async (conn, mek, m, { from, isOwner, args, reply }) => {
+    if (!isOwner) return reply("❌ You are not the owner!");
+    if (args.length === 0) return reply("📢 Please provide a message to broadcast.");
+    const message = args.join(' ');
+    const groups = Object.keys(await conn.groupFetchAllParticipating());
+    for (const groupId of groups) {
+        await conn.sendMessage(groupId, { text: message }, { quoted: mek });
+    }
+    reply("📢 Message broadcasted to all groups.");
+});
 // 3. Set Profile Picture
 cmd({
     pattern: "setpp",
@@ -38,7 +55,6 @@ async (conn, mek, m, { from, isOwner, quoted, reply }) => {
 // 6. Clear All Chats
 cmd({
     pattern: "clearchats",
-    alias: ["clear"],
     desc: "Clear all chats from the bot.",
     category: "owner",
     react: "🧹",
@@ -77,7 +93,7 @@ async (conn, mek, m, { from, isOwner, reply }) => {
 
 cmd({
 pattern: "delete",
-react: "🗑",
+react: "❌",
 alias: ["del"],
 desc: "delete message",
 category: "group",

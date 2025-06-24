@@ -5,7 +5,7 @@ cmd({
     pattern: "owner",
     react: "✅", 
     desc: "Get owner number",
-    category: "main",
+    category: "owner",
     filename: __filename
 }, 
 async (conn, mek, m, { from }) => {
@@ -29,8 +29,8 @@ async (conn, mek, m, { from }) => {
 
         // Send the owner contact message with image and audio
         await conn.sendMessage(from, {
-            image: { url: ' https://files.catbox.moe/ngnch5.jpeg' }, // Image URL from your request
-            caption: `╭━━〔 K1NG XMD 〕━━┈⊷
+            image: { url: 'https://files.catbox.moe/gtv9eh.jpeg' }, // Image URL from your request
+            caption: `╭━━〔 K1NG-XMD 〕━━┈⊷
 ┃◈╭─────────────·๏
 ┃◈┃• *Here is the owner details*
 ┃◈┃• *Name* - ${ownerName}
@@ -38,25 +38,20 @@ async (conn, mek, m, { from }) => {
 ┃◈┃• *Version*: 1.0.0 Beta
 ┃◈└───────────┈⊷
 ╰──────────────┈⊷
-> *MADE IN BY K1NG TECH*`, // Display the owner's details
+> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ K1NG TECH*`, // Display the owner's details
             contextInfo: {
                 mentionedJid: [`${ownerNumber.replace('+', '')}@s.whatsapp.net`], 
                 forwardingScore: 999,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
- 
-                    newsletterName: 'BY K1NG TECH',
+                    newsletterJid: '120363401658098220@newsletter',
+                    newsletterName: 'K1NG-XMD',
                     serverMessageId: 143
                 }            
             }
         }, { quoted: mek });
 
     } catch (error) {
-        console.error(error);
-        reply(`An error occurred: ${error.message}`);
-    }
-});
-   } catch (error) {
         console.error(error);
         reply(`An error occurred: ${error.message}`);
     }
