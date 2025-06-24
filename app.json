@@ -1,7 +1,7 @@
 {
-  "name": "K1NG-XMD",
-  "description": "Javascript WhatsApp bot by k1ng tech",
-  "logo": "https://files.catbox.moe/ngnch5.jpeg",
+  "name": "JESUS-CRASH-V1",
+  "description": "Javascript WhatsApp bot made by K1NG TECH",
+  "logo": "https://files.catbox.moe/avnlge.jpeg",
   "keywords": ["K1NG-XMD"],
   "success_url": "/",
 
@@ -16,7 +16,7 @@
     "STICKER_NAME": {
       "description": "type your sticker pack name.",
       "required": false,
-      "value": "MR K1NG"
+      "value": "K1NG-XMD"
     }, 
       
     "PREFIX": {
@@ -86,13 +86,13 @@
     "OWNER_NAME": {
       "description": "Type Bot Owner Name.",
       "required": false,
-      "value": "MR K1NG"
+      "value": "K1NG TECH"
 }, 
 
     "OWNER_NUMBER": {
       "description": "put the owner number for bot.",
       "required": false,
-      "value": "50933734591"
+      "value": "509xxxxxx"
 
     }, 
 
@@ -132,13 +132,13 @@
     "MENU_IMAGE_URL": {
       "description": "add url for mention reply and menu if want.",
       "required": false,
-      "value": "https://files.catbox.moe/ngnch5.jpeg"
+      "value": "https://files.catbox.moe/avnlge.jpeg"
     },
     
      "DESCRIPTION": {
       "description": "add caption for menu and other",
       "required": false,
-      "value": "> *MADE IN BY KING TECH*"
+      "value": "> *POWERED ʙʏ K1NG TECH*"
     },
 
       "DELETE_LINKS": {
@@ -211,4 +211,4 @@
      ],
   "stack": "heroku-24"
 }
-
+  
