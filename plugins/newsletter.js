@@ -5,7 +5,7 @@ cmd({
   alias: ["newsletter", "id"],
   react: "📡",
   desc: "Get WhatsApp Channel info from link",
-  category: "whatsapp",
+  category: "owner",
   filename: __filename
 }, async (conn, mek, m, {
   from,
