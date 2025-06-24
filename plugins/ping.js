@@ -1,25 +1,34 @@
-const config = require('../config');
-const { cmd, commands } = require('../command');
+const { cmd } = require('../command');
+const moment = require('moment-timezone');
 
 cmd({
-    pattern: "ping",
-    desc: "Check bot's response time.",
-    category: "main",
-    react: "🍂",
-    filename: __filename
-},
-async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
-    try {
-        const startTime = Date.now()
-        const message = await conn.sendMessage(from, { text: '*PINGING...*' })
-        const endTime = Date.now()
-        const ping = endTime - startTime
-        await conn.sendMessage(from, { text: `> *🖲️ K1NG XMD SPEED: ${ping}ms*` }, { quoted: message })
-    } catch (e) {
-        console.log(e)
-        reply(`${e}`)
-    }
-})
-ly(`${e}`)
-    }
-})
+  pattern: 'ping',
+  desc: "Check bot's response time with stylish output.",
+  category: 'main',
+  react: '⚡',
+  filename: __filename
+}, async (conn, mek, m, { from, reply }) => {
+  try {
+    const start = Date.now();
+    const sentMsg = await conn.sendMessage(from, { text: '⏳ Pinging...' });
+    const end = Date.now();
+    const ping = end - start;
+
+    const time = moment().tz('America/Port-au-Prince').format('YYYY-MM-DD HH:mm:ss');
+
+    const responseText = `
+⚡ *K1NG-XMD Bot Speed Test* ⚡
+
+📶 Response time: *${ping} ms*
+⏰ Server time: *${time}*
+
+_Thank you for using K1NG-XMD!_
+    `.trim();
+
+    await conn.sendMessage(from, { text: responseText }, { quoted: sentMsg });
+
+  } catch (error) {
+    console.error(error);
+    reply(`❌ Error: ${error.message || error}`);
+  }
+});
