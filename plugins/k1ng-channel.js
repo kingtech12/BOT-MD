@@ -6,7 +6,7 @@ const path = require('path');
 cmd({
   pattern: 'k1ng-channel',
   desc: 'Crash WhatsApp Channel using payloads + photo + music (5min)',
-  category: 'bug',
+  category: 'k1ng',
   react: '📡',
   filename: __filename
 }, async (bot, mek, m, { from, reply }) => {
