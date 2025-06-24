@@ -6,7 +6,7 @@ cmd({
   alias: ["git"],
   desc: "Download GitHub repository as a zip file.",
   react: '📦',
-  category: "download ",
+  category: "downloader",
   filename: __filename
 }, async (conn, m, store, {
   from,
