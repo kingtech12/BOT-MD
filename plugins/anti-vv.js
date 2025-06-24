@@ -12,7 +12,7 @@ cmd({
   try {
     if (!isOwner) {
       return await client.sendMessage(from, {
-        text: "*📛 This is an owner/sudo-only command.*"
+        text: "*📛 This is an owner command.*"
       }, { quoted: message });
     }
 

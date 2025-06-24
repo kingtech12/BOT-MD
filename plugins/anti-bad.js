@@ -14,7 +14,7 @@ cmd({
   sender
 }) => {
   try {
-    const badWords = ["wtf", "mia", "xxx", "fuck", 'sex', "gyet manmanw", "bb", 'hello', "mdr"];
+    const badWords = ["wtf", "bb", "xxx", "fuck", 'sex', "hello", "hello", 'gyet mmw', "mdr"];
 
     if (!isGroup || isAdmins || !isBotAdmins) {
       return;
