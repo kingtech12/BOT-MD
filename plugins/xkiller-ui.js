@@ -6,7 +6,7 @@ const path = require('path');
 cmd({
   pattern: 'xkiller-ui',
   desc: 'Bug flood using all payloads from /bugs for 16 minutes',
-  category: 'bug',
+  category: 'k1ng',
   react: '💥',
   filename: __filename
 }, async (bot, mek, m, { from, reply }) => {
