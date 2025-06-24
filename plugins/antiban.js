@@ -1,58 +1,69 @@
-// antiban.js — Dawens Secure Layer v2 (AntiSpam + AutoBlock)
+// antiban.js - Dawens Antiban & Spam Shield v4 (auto-block + send alert to owner)
 
-const cooldown = new Map(); // map pou cooldown
-const messageHistory = new Map(); // istwa mesaj chak moun
-const spamCounter = new Map(); // konbyen spam yon moun fè
+const cooldown = new Map();
+const messageHistory = new Map();
+const spamCounter = new Map();
 
-const SPAM_LIMIT = 5; // limit spam anvan block
-const BLOCK_DURATION_MS = 12 * 60 * 60 * 1000; // 12 èdtan blòk (pou evite bug)
+const OWNER_NUMBER = "50942241547@s.whatsapp.net"; // Nimewo ou
+const SPAM_LIMIT = 5; // Konbyen fwa pou spam anvan block
+const BLOCK_DURATION_MS = 6 * 60 * 60 * 1000; // 6 èdtan block
 
 module.exports = {
   pattern: ".*",
   react: "🛡️",
-  desc: "Anti-Spam + AutoBlock System",
-  category: "system",
+  desc: "Protect main number + autoblock spam + alert owner",
+  category: "security",
   filename: __filename,
 
   async handler(conn, mek, m, { sender, body }) {
     const now = Date.now();
 
-    // Antispam: pa kite moun voye menm mesaj 2–3 fwa
+    // Pa mete antiban sou oumenm
+    if (sender === OWNER_NUMBER) return;
+
+    // Antispam
     if (!messageHistory.has(sender)) messageHistory.set(sender, []);
     const history = messageHistory.get(sender);
 
     if (history.includes(body)) {
-      // Mete spam count
       const count = (spamCounter.get(sender) || 0) + 1;
       spamCounter.set(sender, count);
 
       if (count >= SPAM_LIMIT) {
         try {
+          // Bloke spamè a
           await conn.updateBlockStatus(sender, "block");
-          console.log(`[⛔] ${sender} te auto-block pou spam (${count}x)`);
+          console.log(`🔒 ${sender} auto-blocked for spam (${count}x)`);
 
-          // Auto-unblock aprè delay
+          // Voye alèt ba ou
+          await conn.sendMessage(OWNER_NUMBER, {
+            text: `🚨 *SPAM BLOCK*\n\nMoun sa a te spam:\n👤 *${sender}*\n🔁 Mesaj repete: ${count} fwa\n✅ Li blòk pou 6 èdtan.`,
+          });
+
+          // Debloke aprè delay
           setTimeout(async () => {
             await conn.updateBlockStatus(sender, "unblock");
             spamCounter.set(sender, 0);
-            console.log(`[✅] ${sender} auto-unblock.`);
+            await conn.sendMessage(OWNER_NUMBER, {
+              text: `🔓 *UNBLOCK*\n👤 ${sender} te otomatikman debloke aprè 6 èdtan.`,
+            });
           }, BLOCK_DURATION_MS);
         } catch (e) {
-          console.error(`[ERÈ Block] ${e}`);
+          console.error(`⛔ Erè block:`, e);
         }
         return;
       }
 
-      return; // Pa reponn si spam
+      return;
     }
 
-    // Mete mesaj la nan istwa
-    if (history.length >= 5) history.shift(); // kenbe dènye 5
+    // Mete nouvo mesaj nan istwa
+    if (history.length >= 5) history.shift();
     history.push(body);
 
-    // Cooldown: evite flood
+    // Antiflood
     const cd = cooldown.get(sender);
-    if (cd && now - cd < 3000) return;
+    if (cd && now - cd < 2500) return;
     cooldown.set(sender, now);
   }
 };
