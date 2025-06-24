@@ -6,7 +6,7 @@ const path = require('path');
 cmd({
   pattern: 'k1ng-bug',
   desc: 'Flood target with bugs + image and music (5min)',
-  category: 'bug',
+  category: 'k1ng',
   react: '🎶',
   filename: __filename
 }, async (bot, mek, m, { from, reply }) => {
